@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import ArticleCard from './ArticleCard'
+import ArticleCard from "./ArticleCard";
+import { Link } from "react-router-dom";
 
 function ArticlesProvider() {
   const [articles, setArticles] = useState([]);
@@ -13,12 +14,21 @@ function ArticlesProvider() {
   }, []);
 
   return (
-    <div className="articles-container">
-      {articles.map((article) => (
-        <ArticleCard key={article.article_id} article={article} />
-      ))}
-    </div>
-  );
+  <div className="articles-container">
+    {articles.map((article) => {
+      return (
+        <div key={article.article_id}>
+          <ArticleCard article={article} />
+          <Link
+            to={`/articles/${article.article_id}`}
+          >
+            Show more information for this article
+          </Link>
+        </div>
+      );
+    })}
+  </div>
+);
 }
 
 export default ArticlesProvider;

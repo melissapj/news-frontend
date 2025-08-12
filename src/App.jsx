@@ -11,7 +11,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<ArticlesProvider />} />
-        <Route path="/article/:id" element={<ArticleById/>} />
+        <Route path="/articles/:id" element={<ArticleById/>} />
       </Routes>
     </Router>
   );

@@ -3,7 +3,8 @@ import "./App.css";
 import Header from "./components/Header";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ArticlesProvider from "./components/ArticleProvider";
-import ArticleById from './components/ArticleById'
+import ArticleById from "./components/ArticleById";
+import CommentsByArticleId from "./components/CommentsByArticleId";
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<ArticlesProvider />} />
-        <Route path="/articles/:id" element={<ArticleById/>} />
+        <Route path="/articles/:id" element={<ArticleById />} />
+        <Route path="/articles/:id/comments" element={<CommentsByArticleId />} />
       </Routes>
     </Router>
   );

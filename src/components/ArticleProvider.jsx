@@ -19,11 +19,9 @@ function ArticlesProvider() {
       return (
         <div key={article.article_id}>
           <ArticleCard article={article} />
-          <Link
-            to={`/articles/${article.article_id}`}
-          >
-            Show more information for this article
-          </Link>
+          <div className="link-container">
+          <Link to={`/articles/${article.article_id}`}>Show more information for this article</Link>
+          </div>
         </div>
       );
     })}

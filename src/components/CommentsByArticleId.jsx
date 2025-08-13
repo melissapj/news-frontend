@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import CommentsByArticleIdCard from "./CommentsByArticleIdCard";
+import Adder from "./Adder";
 
 function CommentsByArticleId() {
   const { id } = useParams();
@@ -28,13 +29,12 @@ function CommentsByArticleId() {
   return (
     <div className="comments-container">
       <h2 className="header-for-comments">Comments for Article</h2>
-      {comments.map((comment) => {
-        return (
-          <div key={comment.comment_id}>
-            <CommentsByArticleIdCard comment={comment} />
-          </div>
-        );
-      })}
+      {comments.map((comment) => (
+        <div key={comment.comment_id}>
+          <CommentsByArticleIdCard comment={comment} />
+        </div>
+      ))}
+      <Adder comments={comments} setComments={setComments} article_id={id} />
       <div className="link-container">
         <Link to={`/articles/${id}`}>⬅ Back to Article</Link>
         <br />

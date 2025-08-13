@@ -23,9 +23,9 @@ function Voter({ votes, articleId }) {
     <div>
       <p>Votes: {votes + optimisticVotes}</p>
       {message && <p>{message}</p>}
+      {error && <p>{error}</p>}
       <button className="button" onClick={() => handleVote(1)}>+1 vote</button>
       <button className="button" onClick={() => handleVote(-1)}>-1 vote</button>
-      {error && <p>{error}</p>}
     </div>
   );
 }

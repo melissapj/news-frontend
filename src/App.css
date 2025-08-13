@@ -8,6 +8,11 @@ body {
   font-weight: bold;
 }
 
+.user {
+  text-align: center;
+  font-size:12pt;
+}
+
 .loader {
   text-align: center;
   font-weight: bold;

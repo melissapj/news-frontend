@@ -5,11 +5,13 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ArticlesProvider from "./components/ArticleProvider";
 import ArticleById from "./components/ArticleById";
 import CommentsByArticleId from "./components/CommentsByArticleId";
+import User from './components/User'
 
 function App() {
   return (
     <Router>
       <Header />
+      <User />
       <Routes>
         <Route path="/" element={<ArticlesProvider />} />
         <Route path="/articles/:id" element={<ArticleById />} />

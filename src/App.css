@@ -9,7 +9,7 @@ body {
 }
 
 .loader {
-    text-align: center;
+  text-align: center;
   font-weight: bold;
 }
 
@@ -76,7 +76,7 @@ body {
 .header-for-comments {
   text-align: center;
   font-weight: bold;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
 }
 
 .Comments-by-id {
@@ -89,7 +89,7 @@ body {
   gap: 8px;
   padding: 15px;
   max-width: 500px;
-  margin: 20px auto; 
+  margin: 20px auto;
 }
 
 .Comments-by-id p {
@@ -99,7 +99,7 @@ body {
 
 .link-container {
   text-align: center;
-  margin: 20px 0; 
+  margin: 20px 0;
 }
 
 .link-container a {
@@ -111,5 +111,18 @@ body {
 
 .link-container a:hover {
   text-decoration: underline;
+  cursor: pointer;
+}
+
+.link {
+  margin-top: 10px;
+}
+button {
+  margin-left: 8px;
+  width: 150px;
+  height: 50px;
+  background-color: #0e3110;
+  color: white;
+  border: none;
   cursor: pointer;
 }

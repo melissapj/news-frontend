@@ -1,3 +1,5 @@
+import Voter from "./Voter";
+
 function ArticleByIdCard({ article }) {
   if (!article) return <p>Loading...</p>;
 
@@ -16,9 +18,9 @@ function ArticleByIdCard({ article }) {
             day: "numeric",
           })}
         </p>
-        <p>Votes: {article.votes}</p>
-        <p>Comment Count: {article.comment_count}</p>
+        <p>Number of comments: {article.comment_count}</p>
       </div>
+      <Voter votes={article.votes} articleId={article.article_id} />
       {article.article_img_url && (
         <img
           src={article.article_img_url}

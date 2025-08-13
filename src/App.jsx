@@ -13,7 +13,10 @@ function App() {
       <Routes>
         <Route path="/" element={<ArticlesProvider />} />
         <Route path="/articles/:id" element={<ArticleById />} />
-        <Route path="/articles/:id/comments" element={<CommentsByArticleId />} />
+        <Route
+          path="/articles/:id/comments"
+          element={<CommentsByArticleId />}
+        />
       </Routes>
     </Router>
   );

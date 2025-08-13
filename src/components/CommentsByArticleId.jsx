@@ -5,37 +5,43 @@ import CommentsByArticleIdCard from "./CommentsByArticleIdCard";
 function CommentsByArticleId() {
   const { id } = useParams();
   const [comments, setComments] = useState([]);
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`https://northcoders-news-backend-1.onrender.com/api/articles/${id}/comments`)
+    fetch(
+      `https://northcoders-news-backend-1.onrender.com/api/articles/${id}/comments`
+    )
       .then((response) => response.json())
       .then((data) => {
         setComments(data.comments);
-         setLoading(false);  
+        setLoading(false);
       })
       .catch(() => {
-        setLoading(false); 
+        setLoading(false);
       });
   }, [id]);
 
-   if (loading) {
-    return <p className="loader">Loading comments...</p>; 
+  if (loading) {
+    return <p className="loader">Loading comments...</p>;
   }
 
-
- return (
-  <div className="comments-container">
-    <h2 className="header-for-comments">Comments for Article</h2>
-    {comments.map((comment) => {
-      return (
-        <div key={comment.comment_id}>
-          <CommentsByArticleIdCard comment={comment} />
-        </div>
-      );
-    })}
-  </div>
-);
+  return (
+    <div className="comments-container">
+      <h2 className="header-for-comments">Comments for Article</h2>
+      {comments.map((comment) => {
+        return (
+          <div key={comment.comment_id}>
+            <CommentsByArticleIdCard comment={comment} />
+          </div>
+        );
+      })}
+      <div className="link-container">
+        <Link to={`/articles/${id}`}>⬅ Back to Article</Link>
+        <br />
+        <Link to="/">⬅ Back to all Articles</Link>
+      </div>
+    </div>
+  );
 }
 
 export default CommentsByArticleId;

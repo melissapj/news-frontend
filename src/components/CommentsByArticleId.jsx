@@ -8,7 +8,6 @@ function CommentsByArticleId() {
   const { id } = useParams();
   const [comments, setComments] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [message, setMessage] = useState(null);
 
   useEffect(() => {
     fetch(
@@ -35,10 +34,7 @@ function CommentsByArticleId() {
         <div key={comment.comment_id}>
           <CommentsByArticleIdCard comment={comment} />
           <div className="button-wrapper">
-            <Deleter
-              comment_id={comment.comment_id}
-              setComments={setComments}
-            />
+            <Deleter comment_id={comment.comment_id} setComments={setComments} comment_author={comment.author}/>
           </div>
         </div>
       ))}

@@ -30,6 +30,11 @@ function CommentsByArticleId() {
   return (
     <div className="comments-container">
       <h2 className="header-for-comments">Comments for Article</h2>
+      <div className="link-container">
+        <Link to={`/articles/${id}`}>⬅ Back to Article</Link>
+        <br />
+        <Link to="/">⬅ Back to all Articles</Link>
+      </div>
       {comments.map((comment) => (
         <div key={comment.comment_id}>
           <CommentsByArticleIdCard comment={comment} />
@@ -39,11 +44,6 @@ function CommentsByArticleId() {
         </div>
       ))}
       <Adder comments={comments} setComments={setComments} article_id={id} />
-      <div className="link-container">
-        <Link to={`/articles/${id}`}>⬅ Back to Article</Link>
-        <br />
-        <Link to="/">⬅ Back to all Articles</Link>
-      </div>
     </div>
   );
 }

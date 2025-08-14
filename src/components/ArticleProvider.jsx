@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import ArticleCard from "./ArticleCard";
+import AllTopics from './AllTopics'
 import { Link } from "react-router-dom";
 
 function ArticlesProvider() {
@@ -24,21 +25,22 @@ function ArticlesProvider() {
   }
 
   return (
+  <div>
+    <AllTopics />
     <div className="articles-container">
-      {articles.map((article) => {
-        return (
-          <div key={article.article_id}>
-            <ArticleCard article={article} />
-            <div className="link-container">
-              <Link to={`/articles/${article.article_id}`}>
-                Show more information for this article
-              </Link>
-            </div>
+      {articles.map((article) => (
+        <div key={article.article_id}>
+          <ArticleCard article={article} />
+          <div className="link-container">
+            <Link to={`/articles/${article.article_id}`}>
+              Show more information for this article
+            </Link>
           </div>
-        );
-      })}
+        </div>
+      ))}
     </div>
-  );
+  </div>
+);
 }
 
 export default ArticlesProvider;

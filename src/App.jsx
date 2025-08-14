@@ -6,6 +6,7 @@ import ArticlesProvider from "./components/ArticleProvider";
 import ArticleById from "./components/ArticleById";
 import CommentsByArticleId from "./components/CommentsByArticleId";
 import User from './components/User'
+import ArticlesByTopic from './components/ArticlesByTopic'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <User />
       <Routes>
         <Route path="/" element={<ArticlesProvider />} />
+        <Route path="/topics/:slug" element={<ArticlesByTopic />} />
         <Route path="/articles/:id" element={<ArticleById />} />
         <Route
           path="/articles/:id/comments"

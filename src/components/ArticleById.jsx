@@ -26,15 +26,16 @@ function ArticleById() {
 
   return (
     <div>
-      <ArticleByIdCard article={article} />
       <div className="link-container">
         <Link to={`/articles/${article.article_id}/comments`}>
-          View Comments
+          View Comments for this article
         </Link>
-        <div className="link">
+       <div className="link">
           <Link to="/">⬅ Back to Articles</Link>
         </div>
-      </div>
+        </div>
+      <ArticleByIdCard article={article} />
+    
     </div>
   );
 }

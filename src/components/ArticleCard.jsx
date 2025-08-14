@@ -1,6 +1,6 @@
 function ArticleCard({ article }) {
   return (
-    <div className="article-card">
+    <div className="articles">
       <h2>{article.title}</h2>
       <p>By: {article.author}</p>
       <p>Topic: {article.topic}</p>

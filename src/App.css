@@ -8,34 +8,31 @@ body {
   font-weight: bold;
 }
 
+.links {
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
 .user {
   text-align: center;
-  font-size:12pt;
+  font-size: 12pt;
 }
 
 .loader {
   text-align: center;
   font-weight: bold;
-}
-
-.articles-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 10px;
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.article-card {
-  background: rgb(178, 204, 170);
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  padding: 5px;
-  display: flex;
-  flex-direction: column;
-  gap: 0px;
-  text-align: center;
 }
 
 .article-image {
@@ -56,26 +53,39 @@ body {
   }
 }
 
-.article-card p {
-  margin-top: 2px;
-  margin-bottom: 2px;
-}
-
 .header-for-article {
   font-size: 18pt;
 }
 
-.Article-by-id {
+.articles {
   background: rgb(178, 204, 170);
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: 10px;
+  gap: 8px;
+  padding: 15px;
   max-width: 500px;
-  margin: 0 auto;
+  margin: 20px auto;
+}
+
+.article-title {
+  font-size: 18pt;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.articles p {
+  margin: 3px 0;
+  font-size: 12pt;
+}
+
+.article-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-top: 10px;
 }
 
 .header-for-comments {
@@ -104,12 +114,16 @@ body {
 
 .link-container {
   text-align: center;
-  margin: 20px 0;
+  margin: 30px;
+  font-weight: bold;
+  color: #183f1a;
+  text-decoration: none;
+  font-size: 16px;
 }
 
 .link-container a {
   font-weight: bold;
-  color: #2e7d32;
+  color: #183f1a;
   text-decoration: none;
   font-size: 16px;
 }
@@ -133,34 +147,33 @@ body {
 }
 
 .comment-form {
- text-align: center;
+  text-align: center;
   margin: 20px 0;
-
 }
 
 .comment-form input[type="text"],
 .comment-form textarea {
-    width: 500px;
-    padding: 10px 12px;
-    margin: 8px 0 16px 0;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 16px;
-    box-sizing: border-box;
+  width: 500px;
+  padding: 10px 12px;
+  margin: 8px 0 16px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box;
 }
 
 .comment-form textarea {
-    resize: vertical;
-    min-height: 100px;
+  resize: vertical;
+  min-height: 100px;
 }
 
 .comment-form p {
   padding: 1px;
-  margin:5px;
+  margin: 5px;
 }
 
 .submit-button {
-   margin-left: 8px;
+  margin-left: 8px;
   width: 300px;
   height: 50px;
   background-color: #0e3110;
@@ -179,9 +192,9 @@ h3 {
   font-weight: bold;
 }
 .button-wrapper {
-  display: flex;             /* makes the container a flex box */
-  justify-content: center;   /* centers button horizontally */
-  margin-top: 10px;          /* optional spacing from comment */
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 .delete-button {
@@ -191,7 +204,7 @@ h3 {
   color: white;
   border: none;
   cursor: pointer;
-  display: flex;           /* centers text inside button */
+  display: flex;
   justify-content: center;
   align-items: center;
 }

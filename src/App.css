@@ -146,9 +146,27 @@ ul {
   cursor: pointer;
 }
 
+.query-form {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.query-button {
+  margin-left: 8px;
+  width: 150px;
+  height: 20px;
+  background-color: #0e3110;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 11pt;
+}
+
 .comment-form {
   text-align: center;
   margin: 20px 0;
+  padding: 1px;
+  margin: 5px;
 }
 
 .comment-form input[type="text"],

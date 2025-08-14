@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import ArticleCard from "./ArticleCard";
 import AllTopics from './AllTopics'
+import SortingQueries from './SortingQueries'
 import { Link } from "react-router-dom";
 
 function ArticlesProvider() {
@@ -27,6 +28,7 @@ function ArticlesProvider() {
   return (
   <div>
     <AllTopics />
+    <SortingQueries />
     <div className="articles-container">
       {articles.map((article) => (
         <div key={article.article_id}>

@@ -3,6 +3,7 @@ import { useSearchParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import ArticleCard from "./ArticleCard";
 import AllTopics from "./AllTopics";
+import GetAllUsers from "./GetAllUsers";
 
 function List() {
   const [articles, setArticles] = useState([]);
@@ -32,12 +33,20 @@ function List() {
   return (
     <div>
       <AllTopics />
-      <div className="center-container">
+      <div className="link-container">
+        {" "}
+        <Link to="/users">All Users</Link>
+      </div>
+
+      <div className="center-container"><div>
+        <Link to="/users">All Users</Link>
+    </div>
         <SortingQueries
           searchParams={searchParams}
           setSearchParams={setSearchParams}
         />
       </div>
+
       <div className="articles-container">
         {articles.map((article) => (
           <div key={article.article_id}>

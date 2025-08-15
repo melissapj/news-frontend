@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import ArticlesByTopic from "./ArticlesByTopic";
 import ErrorPage from "./ErrorPage";
 
 function AllTopics() {

@@ -23,7 +23,7 @@ function ArticleByIdCard({ article }) {
       <img
         src={article.article_img_url}
         alt={`Image for article: ${article.title}`}
-        className="article-image"
+        className="image"
       />
     )}
   </div>

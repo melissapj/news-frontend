@@ -1,32 +1,28 @@
-import { useSearchParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import SortingForm from "./SortingForm";
 
-function SortingQueries() {
-  const [searchParams, setSearchParams] = useSearchParams();
+function SortingQueries({ searchParams, setSearchParams }) {
+  const [sortby, setSortby] = useState(searchParams?.get("sortby") || "created_at");
+  const [order, setOrder] = useState(searchParams?.get("order") || "asc");
 
-  const handleChange = (event) => {
-    console.log(searchParams)
+  useEffect(() => {
+    setSortby(searchParams?.get("sortby") || "created_at");
+    setOrder(searchParams?.get("order") || "asc");
+  }, [searchParams]);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setSearchParams({ sortby, order });
   };
 
   return (
-    <form className="query-form" onSubmit={handleChange}>
-      <select
-        name="sortby"
-        defaultValue={searchParams.get("sortby") || "created_at"}
-      >
-        <option value="created_at">Date</option>
-        <option value="comment_count">Comments</option>
-        <option value="votes">Votes</option>
-      </select>
-
-      <select name="order" defaultValue={searchParams.get("order") || "asc"}>
-        <option value="asc">Ascending</option>
-        <option value="desc">Descending</option>
-      </select>
-
-      <button className="query-button" type="submit">
-        Apply Filters
-      </button>
-    </form>
+    <SortingForm
+      sortby={sortby}
+      order={order}
+      setSortby={setSortby}
+      setOrder={setOrder}
+      handleSubmit={handleSubmit}
+    />
   );
 }
 

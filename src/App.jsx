@@ -7,6 +7,7 @@ import CommentsByArticleId from "./components/CommentsByArticleId";
 import User from "./components/User";
 import ArticlesByTopic from "./components/ArticlesByTopic";
 import List from "./components/List";
+import ErrorPage from './components/ErrorPage'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           path="/articles/:id/comments"
           element={<CommentsByArticleId />}
         />
+           <Route path="*" element={<ErrorPage message="Page not found. Go back to the homepage." />} /> 
       </Routes>
     </Router>
   );

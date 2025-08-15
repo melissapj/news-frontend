@@ -29,6 +29,8 @@ function Adder({ setComments, article_id }) {
         setTimeout(() => setError(null), 5000);
       });
   }
+
+  
   return (
     <div>
       <form className="comment-form" onSubmit={handleSubmit}>

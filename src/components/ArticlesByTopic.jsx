@@ -2,10 +2,11 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import ArticleCard from './ArticleCard'
 import { Link } from "react-router-dom";
+import ErrorPage from "./ErrorPage";
 
 function ArticlesByTopic() {
   const { slug } = useParams();
-
+ const [error, setError] = useState(null);
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -13,8 +14,19 @@ function ArticlesByTopic() {
 
 
   useEffect(() => {
+    setLoading(true);
+    setError(null);
     fetch("https://northcoders-news-backend-1.onrender.com/api/articles")
-      .then((response) => response.json())
+      .then((res) => {
+        if (!res.ok) {
+          if (res.status === 404)
+            throw new Error(
+              "Topic not found. Check the URL or go back to the homepage."
+            );
+          throw new Error("Something went wrong. Please try again later.");
+        }
+        return res.json();
+      })
       .then((data) => {
         setArticles(data.articles);
         setLoading(false);
@@ -23,12 +35,14 @@ function ArticlesByTopic() {
       );
       setArticles(filteredArticles)
     })
-      .catch(() => setLoading(false));
+      .catch((err) => {
+        setError(err.message);
+        setLoading(false);
+      });
   }, []);
 
-  if (loading) {
-    return <p className="loader">Loading topics...</p>;
-  }
+   if (loading) return <p className="loader">Loading topics...</p>;
+  if (error) return <ErrorPage message={error} />;
 
   return (
   <div>

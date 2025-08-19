@@ -1,4 +1,4 @@
-# Northcoders News Backend
+# Northcoders News Frontend
 
 This is the frontend API for the Northcoders News project.
 built with Vite, HTML, CSS, and JavaScript. The app allows users to browse news topics, read articles, post and view comments. It connects to the backend that handles user accounts, articles, topics, and comments.

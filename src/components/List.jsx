@@ -27,40 +27,36 @@ function List() {
   }, [searchParams]);
 
   if (loading) {
-    return <p className="loader">Loading article...</p>;
+    return <p className="loader">Loading articles...</p>;
   }
 
-  return (
-    <div>
-      <AllTopics />
-      <div className="link-container">
-        {" "}
-        <Link to="/users">All Users</Link>
-      </div>
+return (
+  <div>
+    <AllTopics />
+    <div className="link-container">
+      <Link to="/users">All Users</Link>
 
-      <div className="center-container"><div>
-        <Link to="/users">All Users</Link>
-    </div>
-        <SortingQueries
-          searchParams={searchParams}
-          setSearchParams={setSearchParams}
-        />
-      </div>
+    <SortingQueries
+      searchParams={searchParams}
+      setSearchParams={setSearchParams}
+    />
 
-      <div className="articles-container">
-        {articles.map((article) => (
-          <div key={article.article_id}>
-            <ArticleCard article={article} />
-            <div className="link-container">
-              <Link to={`/articles/${article.article_id}`}>
-                Show more information for this article
-              </Link>
-            </div>
+    <div className="articles-container">
+      {articles.map((article) => (
+        <div key={article.article_id}>
+          <ArticleCard article={article} />
+          <div className="link-container">
+            <Link to={`/articles/${article.article_id}`}>
+              Show more information for this article
+            </Link>
+            
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
-  );
+     </div>
+  </div>
+);
 }
 
 export default List;

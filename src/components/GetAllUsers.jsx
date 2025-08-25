@@ -30,12 +30,15 @@ function GetAllUsers() {
  return (
   <div>
     <h2 className="header">All Users</h2>
-   <div className="page-container">
-  {users.map((user) => (
-    <div className="user" key={user.username}>
-      <ShowAllUsers user={user} />
-    </div>
-  ))}
+     <div className="link-container">
+      <Link to="/">← Back to all articles</Link>
+        </div>
+  <div className="users-wrapper">
+  <div className="users-container">
+    {users.map((user) => (
+      <ShowAllUsers key={user.username} user={user} />
+    ))}
+  </div>
 </div>
   </div>
 );

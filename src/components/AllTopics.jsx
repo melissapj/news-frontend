@@ -31,7 +31,7 @@ function AllTopics() {
       });
   }, []);
 
-  if (loading) return <p className="loader">Loading article...</p>;
+  if (loading) return <p className="loader">Loading topics...</p>;
   if (error) return <ErrorPage message={error} />;
 
   return (

@@ -120,7 +120,7 @@ ul {
 .link-container {
   text-align: center;
   padding: 10px;
-  margin-bottom: 50px;
+
   font-weight: bold;
   color: #183f1a;
   text-decoration: none;
@@ -132,7 +132,7 @@ ul {
   color: #183f1a;
   text-decoration: none;
   font-size: 16px;
-  margin: 50px;
+  margin: 0px;
 }
 
 .link-container a:hover {
@@ -245,7 +245,7 @@ h3 {
   display: flex;
   gap: 1rem;
   align-items: center;
-  margin: 1rem 0;
+  margin: 1rem auto; 
   padding: 0.75rem 1rem;
   background-color: #f9f9f9;
   border-radius: 12px;
@@ -297,6 +297,64 @@ h3 {
   background-color: #f9f9f9;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+ max-width: 500px;
+}
+
+.users-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;   /* full screen height */
+  padding: 20px;
+  background-color: #fff; /* optional */
+}
+
+.users-container {
+  display: column;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
   max-width: 500px;
+}
+
+
+/* Individual user card */
+.user {
+  background: rgb(178, 204, 170);
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  padding: 20px;
+  color: black;
+  display: flex;
+    max-width: 500px;
+     margin-bottom: 20px;
+     margin-top: 20px;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.user:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Username + name */
+.user p {
+  margin: 4px 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: #183f1a;
+}
+
+/* Avatar images */
+.user img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;     /* ensures the image fills evenly */
+  border-radius: 50%;    /* makes it a perfect circle */
+  margin-top: 10px;
+  border: 3px solid #183f1a;
 }
 

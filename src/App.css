@@ -15,8 +15,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 5px;
-  margin-bottom: 10px;
+  margin: 5px 0 10px 0;
   list-style: none;
 }
 
@@ -25,6 +24,31 @@ ul {
   padding: 0;
   margin: 0;
   text-align: center;
+}
+
+ul li {
+  display: inline-block;
+  margin: 6px;
+}
+
+ul li a {
+  display: inline-block;
+  font-weight: bold;
+  color: #183f1a;
+  background-color: #e6f2e3;  
+  text-decoration: none;
+  font-size: 15px;
+  padding: 10px 18px;
+  border-radius: 20px;         
+  border: 1px solid  rgb(178, 204, 170);   
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+ul li a:hover {
+  background-color: #5f8358;   
+  transform: translateY(-2px);  
+  cursor: pointer;
+  color: black;
 }
 
 .user-log {
@@ -49,7 +73,6 @@ ul {
     padding: 10px;
     max-width: 100%;
   }
-
   .article-card {
     padding: 10px;
   }
@@ -62,7 +85,7 @@ ul {
 .articles {
   background: rgb(178, 204, 170);
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -86,13 +109,6 @@ ul {
   font-weight: normal;
 }
 
-.image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 6px;
-  margin-top: 10px;
-}
-
 .header-for-comments {
   text-align: center;
   font-weight: bold;
@@ -102,7 +118,7 @@ ul {
 .Comments-by-id {
   background: rgb(178, 204, 170);
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -113,14 +129,12 @@ ul {
 }
 
 .Comments-by-id p {
-  margin-top: 4px;
-  margin-bottom: 4px;
+  margin: 4px 0;
 }
 
 .link-container {
   text-align: center;
   padding: 10px;
-
   font-weight: bold;
   color: #183f1a;
   text-decoration: none;
@@ -128,21 +142,29 @@ ul {
 }
 
 .link-container a {
+   display: inline-block;
   font-weight: bold;
   color: #183f1a;
+  background-color: #e6f2e3;  
   text-decoration: none;
-  font-size: 16px;
-  margin: 0px;
+  font-size: 15px;
+  padding: 10px 18px;
+  border-radius: 20px;         
+  border: 1px solid  rgb(178, 204, 170);
+  transition: background-color 0.2s, transform 0.1s;
 }
 
 .link-container a:hover {
-  text-decoration: underline;
+  background-color: #5f8358;   
+  transform: translateY(-2px);  
   cursor: pointer;
+  color: black;
 }
 
 .link {
   margin-top: 10px;
 }
+
 .button {
   margin-left: 8px;
   width: 150px;
@@ -154,102 +176,15 @@ ul {
 }
 
 .query-form {
-  text-align: center;
-  margin: 20px 0;
-}
-
-.query-button {
-  margin-left: 8px;
-  width: 150px;
-  height: 20px;
-  background-color: #0e3110;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 11pt;
-}
-
-.comment-form {
-  text-align: center;
-  margin: 20px 0;
-  padding: 1px;
-  margin: 5px;
-}
-
-.comment-form input[type="text"],
-.comment-form textarea {
-  width: 500px;
-  padding: 10px 12px;
-  margin: 8px 0 16px 0;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 16px;
-  box-sizing: border-box;
-}
-
-.comment-form textarea {
-  resize: vertical;
-  min-height: 100px;
-}
-
-.comment-form p {
-  padding: 1px;
-  margin: 5px;
-}
-
-.submit-button {
-  margin-left: 8px;
-  width: 300px;
-  height: 50px;
-  background-color: #0e3110;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 11pt;
-}
-
-h3 {
-  margin-top: 50px;
-}
-
-.messages {
-  text-align: center;
-  font-weight: bold;
-}
-.button-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-}
-
-.delete-button {
-  width: 150px;
-  height: 50px;
-  background-color: #0e3110;
-  color: white;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.center-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-.query-form {
-  display: flex;
+    display: flex;
   gap: 1rem;
   align-items: center;
-  margin: 1rem auto; 
-  padding: 0.75rem 1rem;
-  background-color: #f9f9f9;
+  justify-content: center;
+  margin: 1rem auto;
+  padding: 1rem;
+  background-color: #5f8358; 
   border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   max-width: 500px;
 }
 
@@ -269,23 +204,28 @@ h3 {
 }
 
 .query-form button {
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 8px;
-  background-color: rgb(154, 189, 143);
-  color: #fff;
-  font-size: 1rem;
-  cursor: pointer;
+    display: inline-block;
+  font-weight: bold;
+  color: #183f1a;
+  background-color:  rgb(178, 204, 170);
+  text-decoration: none;
+  font-size: 15px;
+  padding: 10px 18px;
+  border-radius: 20px;         
+  border: 1px solid  rgb(178, 204, 170);   
   transition: background-color 0.2s, transform 0.1s;
 }
 
 .query-form button:hover {
-  background-color: #005fcc;
-  transform: scale(1.05);
+    background-color: #1f2c1d;   
+  transform: translateY(-2px);  
+  cursor: pointer;
+  color: white;
 }
 
 .query-form button:active {
   transform: scale(0.98);
+  color: white;
 }
 
 .error-page {
@@ -296,51 +236,46 @@ h3 {
   padding: 0.75rem 1rem;
   background-color: #f9f9f9;
   border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
- max-width: 500px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  max-width: 500px;
 }
 
 .users-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;   /* full screen height */
+  min-height: 100vh;
   padding: 20px;
-  background-color: #fff; /* optional */
+  background-color: #fff;
 }
 
 .users-container {
   display: column;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 24px;
-  max-width: 1200px;
   max-width: 500px;
 }
 
-
-/* Individual user card */
 .user {
   background: rgb(178, 204, 170);
   border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
   text-align: center;
   padding: 20px;
   color: black;
   display: flex;
-    max-width: 500px;
-     margin-bottom: 20px;
-     margin-top: 20px;
   flex-direction: column;
   align-items: center;
+  max-width: 500px;
+  margin: 20px 0;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .user:hover {
   transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-/* Username + name */
 .user p {
   margin: 4px 0;
   font-size: 14px;
@@ -348,13 +283,11 @@ h3 {
   color: #183f1a;
 }
 
-/* Avatar images */
 .user img {
   width: 120px;
   height: 120px;
-  object-fit: cover;     /* ensures the image fills evenly */
-  border-radius: 50%;    /* makes it a perfect circle */
+  object-fit: cover;
+  border-radius: 50%;
   margin-top: 10px;
   border: 3px solid #183f1a;
 }
-

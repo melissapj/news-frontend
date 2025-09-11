@@ -12,7 +12,7 @@ function SortingQueries({ searchParams, setSearchParams }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setSearchParams({ sortby, order });nc-news-project
+    setSearchParams({ sortby, order });
   };
 
   return (

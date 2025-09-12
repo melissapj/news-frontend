@@ -1,6 +1,10 @@
-function User() {
+function User({ currentUser }) {
   return (
-    <h2 className="user-log">You are logged in as jessjelly</h2>
+    <h2 className="header">
+      {currentUser
+        ? `You are logged in as ${currentUser.username}`
+        : "You are not logged in"}
+    </h2>
   );
 }
 

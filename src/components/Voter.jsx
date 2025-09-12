@@ -6,13 +6,19 @@ function Voter({ votes, articleId }) {
   const [error, setError] = useState(null);
   const [message, setMessage] = useState(null)
 
-  const handleVote = (inc) => {
-    setOptimisticVotes((curr) => {
-      const newVotes = curr + inc;
-      setMessage("You have added a vote!")
-      return newVotes;
-    });
-    patchVotes(articleId, inc)
+ const handleVote = (inc) => {
+  setOptimisticVotes((curr) => {
+    const newVotes = curr + inc;
+
+    if (inc > 0) {
+      setMessage("You upvoted this article 👍");
+    } else {
+      setMessage("You downvoted this article 👎");
+    }
+
+    return newVotes;
+  });
+Votes(articleId, inc)
       .catch(() => {
         setOptimisticVotes((curr) => curr - inc); 
         setError("Failed to update vote");

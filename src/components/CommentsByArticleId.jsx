@@ -40,26 +40,33 @@ function CommentsByArticleId() {
   if (loading) return <p className="loader">Loading comments...</p>;
   if (error) return <ErrorPage message={error} />;
 
-
-  return (
-    <div className="comments-container">
-      <h2 className="header-for-comments">Comments for Article</h2>
-      <div className="link-container">
-        <Link to={`/articles/${id}`}>⬅ Back to Article</Link>
-        <br />
-        <Link to="/">⬅ Back to all Articles</Link>
+return (
+  <div>
+    <div className="link-container">
+      <div className="link">
+        <Link to={`/articles/${id}`}>⬅ Back to article</Link>
+        <Link to="/">⬅ Back to all articles</Link>
       </div>
-      {comments.map((comment) => (
-        <div key={comment.comment_id}>
-          <CommentsByArticleIdCard comment={comment} />
-          <div className="button-wrapper">
-            <Deleter comment_id={comment.comment_id} setComments={setComments} comment_author={comment.author}/>
-          </div>
-        </div>
-      ))}
-      <Adder comments={comments} setComments={setComments} article_id={id} />
     </div>
-  );
+
+    <h2 className="header-for-comments">Comments for Article</h2>
+
+    {comments.map((comment) => (
+      <div key={comment.comment_id}>
+        <CommentsByArticleIdCard comment={comment} />
+        <div className="button-wrapper">
+          <Deleter
+            comment_id={comment.comment_id}
+            setComments={setComments}
+            comment_author={comment.author}
+          />
+        </div>
+      </div>
+    ))}
+
+    <Adder comments={comments} setComments={setComments} article_id={id} />
+  </div>
+);
 }
 
 export default CommentsByArticleId;

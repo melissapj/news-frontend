@@ -36,7 +36,7 @@ function AllTopics() {
 
   return (
     <div>
-      <h2 className="header">All Topics</h2>
+      <h2 className="header">Click for articles on a particular topic</h2>
       <ul>
         {topics.map((topic) => (
           <li key={topic.slug}>

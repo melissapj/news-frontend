@@ -3,7 +3,7 @@ import ErrorPage from "./ErrorPage";
 import { Link } from "react-router-dom";
 import ShowAllUsers from "./ShowAllUsers";
 
-function GetAllUsers() {
+function GetAllUsers({ onUserSelect }) {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -27,21 +27,33 @@ function GetAllUsers() {
   if (loading) return <p className="loader">Loading users...</p>;
   if (error) return <ErrorPage message={error} />;
 
- return (
-  <div>
-    <h2 className="header">All Users</h2>
-     <div className="link-container">
-      <Link to="/">← Back to all articles</Link>
+   return (
+    <div>
+      <div className="link-container">
+        <Link to="/">← Back to all articles</Link>
+      </div>
+      <h2 className="header">All Users</h2>
+      
+      <div>
+        <h3 className="header">Click on user to log in</h3>
+      </div>
+      <div className="users-wrapper">
+      
+        <div className="users-container">
+         
+          {users.map((user) => (
+            <div
+              key={user.username}
+              onClick={() => onUserSelect(user)} 
+              style={{ cursor: "pointer" }}
+            >
+              <ShowAllUsers user={user} />
+            </div>
+          ))}
         </div>
-  <div className="users-wrapper">
-  <div className="users-container">
-    {users.map((user) => (
-      <ShowAllUsers key={user.username} user={user} />
-    ))}
-  </div>
-</div>
-  </div>
-);
+      </div>
+    </div>
+  );
 }
 
 export default GetAllUsers;

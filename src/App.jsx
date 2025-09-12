@@ -7,24 +7,34 @@ import CommentsByArticleId from "./components/CommentsByArticleId";
 import User from "./components/User";
 import ArticlesByTopic from "./components/ArticlesByTopic";
 import List from "./components/List";
-import ErrorPage from './components/ErrorPage'
+import ErrorPage from "./components/ErrorPage";
 import GetAllUsers from "./components/GetAllUsers";
 
 function App() {
+  const [currentUser, setCurrentUser] = useState(null);
+
   return (
     <Router>
       <Header />
-      <User />
+      <User currentUser={currentUser} />
       <Routes>
         <Route path="/" element={<List />} />
-        <Route path="/users" element={<GetAllUsers />} />
+        <Route
+          path="/users"
+          element={<GetAllUsers onUserSelect={setCurrentUser} />}
+        />
         <Route path="/topics/:slug" element={<ArticlesByTopic />} />
         <Route path="/articles/:id" element={<ArticleById />} />
         <Route
           path="/articles/:id/comments"
           element={<CommentsByArticleId />}
         />
-           <Route path="*" element={<ErrorPage message="Page not found. Go back to the homepage." />} /> 
+        <Route
+          path="*"
+          element={
+            <ErrorPage message="Page not found. Go back to the homepage." />
+          }
+        />
       </Routes>
     </Router>
   );

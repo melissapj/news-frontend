@@ -1,4 +1,5 @@
 function User({ currentUser }) {
+
   return (
     <h2 className="header">
       {currentUser

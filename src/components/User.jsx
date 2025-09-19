@@ -1,4 +1,5 @@
 function User({ currentUser }) {
+  //console.log(currentUser)
   return (
     <h2 className="header">
       {currentUser

@@ -27,7 +27,7 @@ function App() {
         <Route path="/articles/:id" element={<ArticleById />} />
         <Route
           path="/articles/:id/comments"
-          element={<CommentsByArticleId />}
+          element={<CommentsByArticleId currentUser={currentUser} />}
         />
         <Route
           path="*"
